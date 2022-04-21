@@ -1,11 +1,12 @@
 import React from 'react';
+import main from "./Main";
 
 
 function Login() {
   return (
-    <>
-      asfd
-    </>
+    <main>
+      <h1>Login</h1>
+    </main>
   );
 }
 

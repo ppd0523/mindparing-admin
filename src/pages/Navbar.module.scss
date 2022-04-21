@@ -1,30 +1,26 @@
-@import "./Layout.module.scss";
-
-.nav {
-  grid-area: nav;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  position: fixed;
+ul {
+  list-style-type: none;
+}
+//
+nav {
+  //display: flex;
+  //flex-direction: column;
+  //height: 100%;
+  //position: fixed;
   overflow-y: auto;
   background-color: #282c34;
 }
 
-.list {
-  padding: 0;
-  list-style-type: none;
-
-}
-
-.item {
-  padding: 10px 20px;
-
-  &:hover {
-    background-color: darkgrey;
-  }
-}
-
-
-.text {
+li {
   color: beige;
 }
+//
+//.item {
+//  padding: 10px 20px;
+//
+//  &:hover {
+//    background-color: darkgrey;
+//  }
+//}
+//
+//

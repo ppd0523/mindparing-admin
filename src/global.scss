@@ -1,0 +1,36 @@
+$BLOCK: 75px;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+  sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+  background-color: powderblue;
+}
+
+#root {
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: $BLOCK minmax(5*$BLOCK, auto) $BLOCK;
+  grid-template-columns: 2*$BLOCK 1fr;
+  gap: 10px;
+  grid-template-areas:
+    "nav header"
+    "nav main"
+    "nav footer";
+}
+
+nav { grid-area: nav; }
+header { grid-area: header; }
+main { grid-area: main; }
+footer { grid-area: footer; }
+
+.text { font-size: 1.5em; }

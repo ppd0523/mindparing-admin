@@ -1,16 +1,20 @@
 import React from 'react';
+import "./Navbar.module.scss";
+import LoginButton from "../components/LoginButton";
 
 
 function Navbar() {
   return (
     <nav>
       <ul>
-        <li>Hello world!</li>
-        <li>asfddsaf</li>
-        <li>12342314</li>
-        <li>yououioiu</li>
-        <li>아이야이야</li>
+        <li className="text-l">Hello world!</li>
+        <li className="text-l">Hello world!</li>
+        <li className="text-l">Hello world!</li>
+        <li className="text-l">Hello world!</li>
+        <li className="text-l">Hello world!</li>
+        <li className="text-l">Hello world!</li>
       </ul>
+        <LoginButton/>
     </nav>
   );
 }

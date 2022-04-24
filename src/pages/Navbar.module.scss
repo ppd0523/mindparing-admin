@@ -1,26 +1,25 @@
+$PRIMARY: #282c34;
+
+nav {
+  overflow-y: auto;
+  background: $PRIMARY;
+  display: flex;
+  flex-wrap: wrap;
+  align-content: space-between;
+  justify-content: center;
+}
+
 ul {
   list-style-type: none;
-}
-//
-nav {
-  //display: flex;
-  //flex-direction: column;
-  //height: 100%;
-  //position: fixed;
-  overflow-y: auto;
-  background-color: #282c34;
+  line-height: 300%;
+  width: 100%;
 }
 
 li {
   color: beige;
+
+  &:hover {
+    background: aliceblue;
+    color: $PRIMARY;
+  }
 }
-//
-//.item {
-//  padding: 10px 20px;
-//
-//  &:hover {
-//    background-color: darkgrey;
-//  }
-//}
-//
-//

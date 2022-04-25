@@ -1,0 +1,46 @@
+.container {
+  display: grid;
+  grid-gap: 10px;
+  grid-template-areas:
+    "id-label id-input id-input"
+    "pw-label pw-input pw-input"
+    ". error-text error-text"
+    ". login-btn join-btn";
+}
+
+.id-label { grid-area: id-label }
+.id-input {
+  grid-area: id-input;
+  width: 500px;
+  border-radius: 50px;
+  border-color: #999999;
+  height: 65px;
+}
+.pw-label { grid-area: pw-label }
+.pw-input {
+  grid-area: pw-input;
+  width: 500px;
+  border-radius: 50px;
+  border-color: #999999;
+  height: 65px;
+}
+.error-text {
+  grid-area: error-text;
+  color: red;
+}
+.login-btn {
+  grid-area: login-btn;
+  color: white;
+  border-radius: 50px;
+  border-width: 0px;
+  background: #6977E4;
+  height: 65px;
+}
+.join-btn {
+  grid-area: join-btn;
+  color: white;
+  border-radius: 50px;
+  border-width: 0px;
+  background: #333333;
+  height: 65px;
+}

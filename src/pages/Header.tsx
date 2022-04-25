@@ -1,11 +1,11 @@
 import React from 'react';
-import style from "./Header.module.scss";
-
+import styles from "./Header.module.scss";
+import './Header.module.scss';
 
 function Header() {
   return (
-    <header className={style.header}>
-      <h1>Mind-Paring</h1>
+    <header>
+      <h1>홈</h1>
     </header>
   );
 }

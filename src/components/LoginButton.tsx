@@ -1,11 +1,11 @@
 import React from 'react';
-import './LoginButton.module.scss';
-
+import style from './LoginButton.module.scss';
+import cls from 'classnames';
 
 function LoginButton() {
     return (
         <>
-            <button className="text-m">LOGIN</button>
+            <button className={cls(style['login-btn'])}>LOGIN</button>
         </>
     );
 }

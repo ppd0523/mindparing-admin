@@ -1,11 +1,15 @@
 import React from 'react';
 import main from "./Main";
+import LoginForm from "../components/LoginForm";
+import style from './Login.module.scss'
 
 
 function Login() {
   return (
     <main>
-      <h1>Login</h1>
+      <div className={style.login}>
+        <LoginForm/>
+      </div>
     </main>
   );
 }

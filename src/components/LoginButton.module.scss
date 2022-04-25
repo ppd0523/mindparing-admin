@@ -1,6 +1,11 @@
-button {
-  width: 120px;
-  height: 40px;
+$NAV_SECONDARY: #6977E4;
+
+.login-btn {
+  width: 300px;
+  height: 64px;
   border-radius: 40px;
-  margin: 5px;
+  margin-bottom: 45px;
+  background-color: $NAV_SECONDARY;
+  color: white;
+  border-width: 0px;
 }

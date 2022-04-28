@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import ReactDOM from 'react-dom/client';
 import './global.scss';
 import {
@@ -18,26 +18,31 @@ import QnAList from "./pages/QnAList";
 import ManageCoupon from "./pages/ManageCoupon";
 
 
+import { DBProvider, dbContext } from './components/DBProvider';
+
+
 const rootElement = document.getElementById('root');
 if (!rootElement) throw new Error("Failed to find the root element");
 const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Layout/>}>
-          <Route path="login" element={<Login/>}/>
-          <Route path="users" element={<UserList/>}/>
-          <Route path="posts" element={<PostList/>}/>
-          <Route path="write/magazine" element={<WriteMagazine/>}/>
-          <Route path="magazines" element={<MagazineList/>}/>
-          <Route path="notices" element={<NoticeList/>}/>
-          <Route path="gnas" element={<QnAList/>}/>
-          <Route path="manage/coupons" element={<ManageCoupon/>}/>
-        </Route>
-      </Routes>
-    </Router>
+    <DBProvider>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Layout/>}>
+            <Route path="login" element={<Login/>}/>
+            <Route path="users" element={<UserList/>}/>
+            <Route path="posts" element={<PostList/>}/>
+            <Route path="write/magazine" element={<WriteMagazine/>}/>
+            <Route path="magazines" element={<MagazineList/>}/>
+            <Route path="notices" element={<NoticeList/>}/>
+            <Route path="gnas" element={<QnAList/>}/>
+            <Route path="manage/coupons" element={<ManageCoupon/>}/>
+          </Route>
+        </Routes>
+      </Router>
+    </DBProvider>
   </React.StrictMode>
 );
 

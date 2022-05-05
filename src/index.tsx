@@ -8,7 +8,6 @@ import {
 } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Login from "./pages/Login";
-import Main from "./pages/Main";
 import UserList from "./pages/UserList";
 import PostList from "./pages/PostList";
 import WriteMagazine from "./pages/WriteMagazine";
@@ -17,8 +16,8 @@ import NoticeList from "./pages/NoticeList";
 import QnAList from "./pages/QnAList";
 import ManageCoupon from "./pages/ManageCoupon";
 
-
-import { DBProvider, dbContext } from './components/DBProvider';
+import {DataProvider} from "./components/DataProvider";
+import Home from "./pages/Home";
 
 
 const rootElement = document.getElementById('root');
@@ -27,10 +26,11 @@ const root = ReactDOM.createRoot(rootElement);
 
 root.render(
   <React.StrictMode>
-    <DBProvider>
+    <DataProvider>
       <Router>
         <Routes>
           <Route path="/" element={<Layout/>}>
+            <Route path="" element={<Home/>}/>
             <Route path="login" element={<Login/>}/>
             <Route path="users" element={<UserList/>}/>
             <Route path="posts" element={<PostList/>}/>
@@ -42,7 +42,7 @@ root.render(
           </Route>
         </Routes>
       </Router>
-    </DBProvider>
+    </DataProvider>
   </React.StrictMode>
 );
 

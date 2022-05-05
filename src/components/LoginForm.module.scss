@@ -1,4 +1,4 @@
-.container {
+.form-container {
   display: grid;
   grid-gap: 10px;
   grid-template-areas:
@@ -6,15 +6,12 @@
     "pw-label pw-input pw-input"
     ". error-text error-text"
     ". login-btn join-btn";
+  grid-template-columns: 50px 1fr 1fr;
+  grid-template-rows: 1fr 1fr 30px 1fr;
 }
 
 .id-label { grid-area: id-label }
-.id-input {
-  grid-area: id-input;
-  width: 500px;
-  border-radius: 50px;
-  border-color: #999999;
-  height: 65px;
+.id-input { grid-area: id-input;
 }
 .pw-label { grid-area: pw-label }
 .pw-input {

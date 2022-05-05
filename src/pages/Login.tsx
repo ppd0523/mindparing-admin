@@ -2,14 +2,15 @@ import React from 'react';
 import main from "./Main";
 import LoginForm from "../components/LoginForm";
 import style from './Login.module.scss'
+import {usePageStatus} from "../components/DataProvider";
 
 
 function Login() {
+  const pageStatus = usePageStatus();
+  pageStatus.currentPage = '로그인';
   return (
-    <main>
-      <div className={style.login}>
+    <main className={style.container}>
         <LoginForm/>
-      </div>
     </main>
   );
 }

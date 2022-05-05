@@ -1,14 +1,30 @@
 import React from 'react';
-import styles from "./Header.module.scss";
+import cls from 'classnames';
 import './Header.module.scss';
-import {dbContext} from "../components/DBProvider";
+import style from './Header.module.scss';
+import {
+    useConnection,
+    usePageStatus,
+} from "../components/DataProvider";
+import {
+    AiOutlineRight,
+} from 'react-icons/ai';
+import {useNavigate} from "react-router-dom";
+
 
 function Header() {
-  const context = React.useContext(dbContext);
+  const connection = useConnection();
+  const pageStatus = usePageStatus();
+  const navigate = useNavigate();
   return (
-    <header>
-      <h1>context: {context}</h1>
-    </header>
+    <>
+      <header>
+        <h1 className={cls(style.title, 'text-xxxl')}>{pageStatus.currentPage}</h1>
+        <div
+            onClick={()=>{navigate(-1)}}
+            className={cls(style.backBtn, 'text-xxxl')}>BACK<AiOutlineRight style={{}}/></div>
+      </header>
+    </>
   );
 }
 

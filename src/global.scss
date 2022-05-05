@@ -18,8 +18,8 @@ body {
 #root {
   min-height: 100vh;
   display: grid;
-  grid-template-rows: $BLOCK minmax(5*$BLOCK, auto) $BLOCK;
-  grid-template-columns: 350px 1fr;
+  grid-template-rows: 100px minmax(5*$BLOCK, auto) $BLOCK;
+  grid-template-columns: 350px minmax(650px, auto);
   grid-template-areas:
     "nav header"
     "nav main"
@@ -35,6 +35,10 @@ footer { grid-area: footer; }
   &-s { font-size: 0.875em; }
   &-m { font-size: 1.125em; }
   &-l { font-size: 1.50em; }
+  &-xl { font-size: 1.625em; }
+  &-xxl { font-size: 1.750em; }
+  &-xxxl { font-size: 1.875em; }
+  &-xxxl { font-size: 2.000em; }
   &-normal { font-weight: normal; }
   &-bold { font-weight: bold; }
 }

@@ -2,7 +2,7 @@ import React from 'react';
 import cls from 'classnames';
 import "./Navbar.module.scss";
 import styles from './Navbar.module.scss';
-import LoginButton from "../components/LoginButton";
+import RoundButton from "../components/RoundButton";
 import { NavLink } from "react-router-dom";
 
 
@@ -22,7 +22,7 @@ function Navbar() {
         <NavLink to="gnas"><li className={cls('text-l', 'text-bold')}>Q&A</li></NavLink>
         <NavLink to="manage/coupons"><li className={cls('text-l', 'text-bold')}>쿠폰관리</li></NavLink>
       </ul>
-        <LoginButton/>
+      <RoundButton onClick={()=>{console.log('LOGIN clicked in nav')}}>LOGIN</RoundButton>
     </nav>
   );
 }

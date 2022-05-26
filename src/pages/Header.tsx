@@ -3,7 +3,7 @@ import cls from 'classnames';
 import './Header.module.scss';
 import style from './Header.module.scss';
 import {
-    useConnection,
+    useServer,
     usePageStatus,
 } from "../components/DataProvider";
 import {
@@ -13,7 +13,7 @@ import {useNavigate} from "react-router-dom";
 
 
 function Header() {
-  const connection = useConnection();
+  const connection = useServer();
   const pageStatus = usePageStatus();
   const navigate = useNavigate();
   return (

@@ -17,7 +17,9 @@ import QnAList from "./pages/QnAList";
 import ManageCoupon from "./pages/ManageCoupon";
 
 import {DataProvider} from "./components/DataProvider";
+
 import Home from "./pages/Home";
+import ReportList from "./pages/ReportList";
 
 
 const rootElement = document.getElementById('root');
@@ -36,6 +38,7 @@ root.render(
             <Route path="posts" element={<PostList/>}/>
             <Route path="write/magazine" element={<WriteMagazine/>}/>
             <Route path="magazines" element={<MagazineList/>}/>
+            <Route path="reports" element={<ReportList/>}/>
             <Route path="notices" element={<NoticeList/>}/>
             <Route path="gnas" element={<QnAList/>}/>
             <Route path="manage/coupons" element={<ManageCoupon/>}/>

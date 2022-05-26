@@ -6,14 +6,17 @@ import React, {
     Dispatch,
     SetStateAction,
 } from 'react';
+import axios from "axios";
+
+const SERVER_URL = "http://ec2-3-35-99-11.ap-northeast-2.compute.amazonaws.com:9001"
 
 
 type DataConnectionContextType = {
-    status?: string
+    status?: string;
+    login: any;
 }
-
-const dbConext = createContext<DataConnectionContextType>({})
-const useConnection = ()=>{
+const dbConext = createContext<DataConnectionContextType>({} as DataConnectionContextType);
+const useServer = ()=>{
     return useContext(dbConext);
 }
 
@@ -42,7 +45,13 @@ function DataProvider(props: IDataProvider) {
 
     const defaultConnection = {
         status: 'disconnected',
-
+        login: async (id:string, hashed_passwd:string)=>{
+            const res = await axios.post(
+              `${SERVER_URL}/v1/admin/login`,
+              {id: id, hashed_passwd: hashed_passwd}
+            );
+            console.log(res);
+        }
     };
     const defaultPageStatus = {
         currentPage,
@@ -62,6 +71,6 @@ function DataProvider(props: IDataProvider) {
 
 export {
     DataProvider,
-    useConnection,
+    useServer,
     usePageStatus,
 };

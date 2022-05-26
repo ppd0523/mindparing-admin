@@ -9,7 +9,8 @@ interface IStyledInput {
     type?: string;
     placeholder?: string;
     onChange?: (event:ChangeEvent<HTMLInputElement>)=>void;
-    value?: any;
+    value?: string;
+    id?: string;
 }
 function StyledInput(props: IStyledInput) {
     return (
@@ -17,6 +18,7 @@ function StyledInput(props: IStyledInput) {
             <input
                 className={cls(props.className, )}
                 type={props.type}
+                id={props.id}
                 placeholder={props.placeholder}
                 onChange={props.onChange}
                 value={props.value}

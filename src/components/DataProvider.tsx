@@ -8,7 +8,7 @@ import React, {
 } from 'react';
 import axios from "axios";
 
-const SERVER_URL = "http://ec2-3-35-99-11.ap-northeast-2.compute.amazonaws.com:9001"
+const SERVER_URL = "http://ec2-3-35-99-11.ap-northeast-2.compute.amazonaws.com:8080"
 
 
 type DataConnectionContextType = {

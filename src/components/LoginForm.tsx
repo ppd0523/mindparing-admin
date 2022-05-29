@@ -23,10 +23,10 @@ function LoginForm() {
   }
   const onClick = async ()=>{
     console.log('clicked');
-    const SERVER_URL = "http://ec2-3-35-99-11.ap-northeast-2.compute.amazonaws.com:9001"
+    const SERVER_URL = "http://ec2-3-35-99-11.ap-northeast-2.compute.amazonaws.com:8080"
     const res = await axios.post(
       `${SERVER_URL}/v1/admin/login`,
-      {id: 'admin', hashed_passwd: 'asdf'}
+      {id: 'admin', hashed_passwd: 'admin'}
     );
     console.log(res);
   }

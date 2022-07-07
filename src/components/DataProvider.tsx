@@ -8,12 +8,11 @@ import React, {
 } from 'react';
 import axios from "axios";
 
-const SERVER_URL = "http://ec2-3-35-99-11.ap-northeast-2.compute.amazonaws.com:8080"
-
 
 type DataConnectionContextType = {
     status?: string;
     login: any;
+    checkSession: any;
 }
 const dbConext = createContext<DataConnectionContextType>({} as DataConnectionContextType);
 const useServer = ()=>{
@@ -45,13 +44,32 @@ function DataProvider(props: IDataProvider) {
 
     const defaultConnection = {
         status: 'disconnected',
+        checkSession: async ()=>{
+            axios.get('v1/getSession')
+              .then(response=>{
+                  console.log(response);
+              })
+        },
         login: async (id:string, hashed_passwd:string)=>{
-            const res = await axios.post(
-              `${SERVER_URL}/v1/admin/login`,
-              {id: id, hashed_passwd: hashed_passwd}
-            );
-            console.log(res);
-        }
+
+            axios.post(`/v1/admin/login`, {id, hashed_passwd})
+              .then(response=>{
+                  if (response.status !== 200)
+                    throw Error("No server response");
+
+                  return response.data
+              })
+              .then(data=>{
+                  console.log(data);
+                  // errorCode: null, {status: 'LOGIN'}
+                  // 이미 로그인 errorCode: login-001, httpStatus: 400
+                  // 로그인 안 돼있음 errorCode: login-002, httpStatus: 400
+                  // 아디나 비번 틀림 errorCode: login-003, httpStatus: 400
+              });
+        },
+        getUsers: async ()=>{
+            axios.get('/v1/admin/users')
+        },
     };
     const defaultPageStatus = {
         currentPage,

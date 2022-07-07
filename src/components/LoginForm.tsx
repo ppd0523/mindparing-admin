@@ -21,12 +21,25 @@ function LoginForm() {
   const onChange_userPw = (e: ChangeEvent<HTMLInputElement>)=>{
     setUserPw(e.currentTarget.value)
   }
-  const onClick = async ()=>{
-    console.log('clicked');
-    const SERVER_URL = "http://ec2-3-35-99-11.ap-northeast-2.compute.amazonaws.com:8080"
+  const onClick1 = async ()=>{
+    console.log('clicked1');
     const res = await axios.post(
-      `${SERVER_URL}/v1/admin/login`,
+      `/v1/admin/login`,
       {id: 'admin', hashed_passwd: 'admin'}
+    );
+    console.log(res);
+  }
+  const onClick2 = async ()=>{
+    console.log('clicked2');
+    const res = await axios.post(
+      `/v1/admin/logout`,
+    );
+    console.log(res);
+  }
+  const onClick3 = async ()=>{
+    console.log('clicked3');
+    const res = await axios.get(
+      `/v1/getSession`,
     );
     console.log(res);
   }
@@ -50,7 +63,9 @@ function LoginForm() {
       <span className={cls(style['error-text'], 'text-s')}>{"비밀번호가 일치하지 않습니다"}</span>
       <RoundButton className={cls(style['login-btn'], 'text-l', 'text-bold')} onClick={()=>server.login(userId, userPw)}>로그인</RoundButton>
       <RoundButton className={cls(style['join-btn'], 'text-l', 'text-bold')} onClick={()=>{console.log('clicked 회원가입 in login form')}} disabled>회원가입</RoundButton>
-      <button onClick={onClick}>fsadfasdf</button>
+      <button onClick={onClick1}>Test1</button>
+      <button onClick={onClick2}>Test2</button>
+      <button onClick={onClick3}>Test3</button>
     </div>
   );
 }

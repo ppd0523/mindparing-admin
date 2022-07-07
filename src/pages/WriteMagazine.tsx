@@ -1,10 +1,14 @@
-import React from 'react';
+import React, {useState} from 'react';
+import ReactQuill from "react-quill";
+import 'react-quill/dist/quill.snow.css';
 
 
 function WriteMagazine() {
+  const [value, setValue] = useState<string>('');
   return (
     <main>
-      <div>매거진 작성 페이지</div>
+      <ReactQuill value={value} onChange={setValue}/>
+
     </main>
   );
 }

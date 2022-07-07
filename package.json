@@ -2,6 +2,7 @@
   "name": "mindpairing",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://ec2-3-35-99-11.ap-northeast-2.compute.amazonaws.com:9001",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
@@ -17,9 +18,12 @@
     "react": "^18.0.0",
     "react-dom": "^18.0.0",
     "react-icons": "^4.3.1",
+    "react-quill": "^2.0.0-beta.4",
     "react-router-dom": "^6",
     "react-scripts": "5.0.1",
     "sass": "^1.50.1",
+    "suneditor": "^2.43.14",
+    "suneditor-react": "^3.4.0",
     "typescript": "^4.6.3",
     "typescript-plugin-css-modules": "^3.4.0",
     "web-vitals": "^2.1.4"
